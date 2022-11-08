@@ -13,3 +13,5 @@ __pycache__/
 TestResults
 .ipynb_checkpoints
 /PythonInterface/src/lib/*
+/PythonInterface/build/lib/PythonInterface/lib/*
+/PythonInterface/PythonInterface/lib/*

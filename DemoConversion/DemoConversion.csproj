@@ -43,8 +43,8 @@
 			<FilesToCopyForPython Include="$(ProjectDir)bin\$(ConfigurationName)\net471\*.dll" />
 			<FilesToCopyForPython Include="$(ProjectDir)bin\$(ConfigurationName)\net471\*.pdb" />
 		</ItemGroup>
-		<MakeDir Directories="..\PythonInterface\src\lib" />
-		<Copy SourceFiles="@(FilesToCopyForPython)" DestinationFolder="..\PythonInterface\src\lib" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
+		<MakeDir Directories="..\PythonInterface\PythonInterface\lib" />
+		<Copy SourceFiles="@(FilesToCopyForPython)" DestinationFolder="..\PythonInterface\PythonInterface\lib" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
 		<Message Text="Copied C# files over to the Python project" Importance="High" />
 
 	</Target>

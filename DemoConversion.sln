@@ -5,7 +5,10 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConversion", "DemoConversion\DemoConversion.csproj", "{25933A62-2EE2-4D7C-9278-DA60BC2C2610}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonInterface", "PythonInterface\PythonInterface.pyproj", "{FA7F38C0-4909-4B02-B19D-B51B58A7EE03}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{429A25B9-5359-4CB4-AA53-4C4924828F9D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +20,6 @@ Global
 		{25933A62-2EE2-4D7C-9278-DA60BC2C2610}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25933A62-2EE2-4D7C-9278-DA60BC2C2610}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25933A62-2EE2-4D7C-9278-DA60BC2C2610}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA7F38C0-4909-4B02-B19D-B51B58A7EE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA7F38C0-4909-4B02-B19D-B51B58A7EE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

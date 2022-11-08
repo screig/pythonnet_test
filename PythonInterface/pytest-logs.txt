@@ -1,0 +1,6 @@
+INFO     tests.test_1:test_1.py:11 Initialising the  Testing_Class class
+INFO     tests.test_1:test_1.py:18 Get time
+INFO     tests.test_1:test_1.py:21 2022-11-08 10:17:45.625445
+INFO     tests.test_1:test_1.py:24 Get some names
+INFO     tests.test_1:test_1.py:27 ['Tom', 'Dick', 'Harry']
+WARNING  tests.test_1:test_1.py:15 Tearing down the Testing_Class class
