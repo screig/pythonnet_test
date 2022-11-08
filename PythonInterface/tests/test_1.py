@@ -10,14 +10,10 @@ class Testing_Class:
     def setup_class(cls):
         logger.info("Initialising the  Testing_Class class")
 
-    @classmethod
-    def teardown_class(cls):
-        logger.warning("Tearing down the Testing_Class class")
-
     def test_get_time(self):
         logger.info("Get time")
         mytime = pyi.get_time()
-        assert type(mytime) == datetime#
+        assert type(mytime) == datetime
         logger.info(mytime)
 
     def test_get_names(self):
