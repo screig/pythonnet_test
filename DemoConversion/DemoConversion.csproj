@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
+		<TargetFrameworks>netstandard2.0;net471</TargetFrameworks>
+	</PropertyGroup>
+	
+		
+	<PropertyGroup>
+		<LangVersion>8.0</LangVersion>
+		<Version>1.0.0.0</Version>
+		<FileVersion>1.2.3.5</FileVersion>
+		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	</PropertyGroup>
+	
+		
+	<ItemGroup>
+	  <None Remove="log4net.config" />
+	</ItemGroup>
+	
+		
+	<ItemGroup>
+	  <EmbeddedResource Include="log4net.config" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="log4net" Version="2.0.15" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.1" />
+		<PackageReference Include="pythonnet" Version="3.0.0" />
+	</ItemGroup>
+
+
+	<Target Name="CopyDll4Python" AfterTargets="Build" Condition=" '$(OS)' == 'Windows_NT' ">
+		<Message Text="Starting copying of C# files over to the Python project" Importance="High" />
+
+		<!--Copy the Net dlls-->
+		<ItemGroup>
+			<FilesToCopyForPython Include="$(ProjectDir)bin\$(ConfigurationName)\net471\*.dll" />
+			<FilesToCopyForPython Include="$(ProjectDir)bin\$(ConfigurationName)\net471\*.pdb" />
+		</ItemGroup>
+		<MakeDir Directories="..\PythonInterface\src\lib" />
+		<Copy SourceFiles="@(FilesToCopyForPython)" DestinationFolder="..\PythonInterface\src\lib" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
+		<Message Text="Copied C# files over to the Python project" Importance="High" />
+
+	</Target>
+
+	</Project>
