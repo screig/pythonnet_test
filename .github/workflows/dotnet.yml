@@ -21,8 +21,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5   
         
     - name: Restore dependencies
-      run: dotnet restore
-      
+      run: |
+       dotnet restore
+       dotnet list package
+       
     - name: Build
       run: dotnet build --no-restore  # This will copy the C# dlls to the python dir
       
@@ -55,8 +57,11 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5   
         
     - name: Restore dependencies
-      run: dotnet restore
-      
+      run: |
+       dotnet restore
+       dotnet add package pythonnet --version 3.0.1 
+       dotnet list package
+                
     - name: Build
       run: dotnet build --no-restore  # This will copy the C# dlls to the python dir
       
