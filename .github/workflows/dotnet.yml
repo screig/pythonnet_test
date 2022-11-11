@@ -57,9 +57,13 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5   
         
     - name: Restore dependencies
-      run: |
-       dotnet restore
+      run: dotnet restore
+       
+    - name: Update pythonnet in the C# solution
+      run: |        
+       cd DemoConversion
        dotnet add package pythonnet --version 3.0.1 
+       cd ..
        dotnet list package
                 
     - name: Build
